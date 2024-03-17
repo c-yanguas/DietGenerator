@@ -123,11 +123,11 @@ class ClientHistory():
 
 
     class ColumnsToPlot():
-        CARBOHYDRATES = FoodDatabase.Sheet.CARBOHYDRATES
-        FATS = ClientConfiguration.Column.FATS
-        PROTEINS = ClientConfiguration.Column.PROTEINS
-        FRUITS = ClientConfiguration.Column.FRUITS
-        VEGETABLES = ClientConfiguration.Column.VEGETABLES
+        # CARBOHYDRATES = FoodDatabase.Sheet.CARBOHYDRATES
+        # FATS = ClientConfiguration.Column.FATS
+        # PROTEINS = ClientConfiguration.Column.PROTEINS
+        # FRUITS = ClientConfiguration.Column.FRUITS
+        # VEGETABLES = ClientConfiguration.Column.VEGETABLES
         CALORIES = ClientConfiguration.Column.CALORIES
         WEIGHT = ClientConfiguration.Column.WEIGHT
 

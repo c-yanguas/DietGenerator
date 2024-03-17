@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import constants as ct
 import os
+import sys
 
 def detect_updates():
     """
@@ -23,9 +24,12 @@ def detect_updates():
         df1 = pd.read_excel(ct.ClientConfiguration.PATH)
         df2 = pd.read_excel(ct.ClientConfiguration.PATH_BACKUP)
         df = pd.concat([df1, df2]).drop_duplicates(keep=False)
+        # nos quedamos con el first porque hace referencia a las entradas de la configuraicon mas reciente
+        df = df.drop_duplicates(subset=[ct.ClientConfiguration.Column.CLIENT], keep="first")
     
     if len(df) == 0:
-        raise ValueError(f"No existen actualizaciones desde la ultima ejecucion en el fichero {ct.ClientConfiguration.PATH}")
+        print(f"No existen actualizaciones desde la ultima ejecucion en el fichero {ct.ClientConfiguration.PATH}")
+        sys.exit(0)
     return df
 
 
