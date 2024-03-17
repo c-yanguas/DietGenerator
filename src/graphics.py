@@ -11,6 +11,10 @@ import locale
 
 idioma_sistema = locale.getdefaultlocale()[0]
 sheet_name = "Hoja 1" if idioma_sistema.startswith("es") else "Sheet 1"
+if idioma_sistema:
+    sheet_name = "Hoja 1" if idioma_sistema.startswith("es") else "Sheet 1"
+else:
+    sheet_name = "Hoja 1"
 
 def generar_grafico(datos, nombre_archivo=ct.IMAGES_PATH_TMP):
     plt.figure(figsize=(6, 4))
